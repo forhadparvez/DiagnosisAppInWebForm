@@ -132,6 +132,14 @@ namespace DiagnosticCenterBillManagementSystemApp
                     testNameTextBox.Text = aTest.Name;
                     feeTextBox.Text = aTest.Fee.ToString("N2");
                     testTypeDropDownList.SelectedValue = aTest.TestTypeId.ToString();
+
+
+                    var testList = new List<Test>();
+                    testList.Add(aTest);
+
+                    testGridView.DataSource = testList;
+                    testGridView.DataBind();
+
                 }
                 else
                 {
